@@ -1,10 +1,8 @@
 
 var exec = require('mz/child_process').execFile
-var Promise = require('native-or-bluebird')
 var tmpdir = require('os').tmpdir()
 var path = require('path')
 var fs = require('mz/fs')
-var FS = require('fs')
 
 var eigpy = path.resolve(__dirname, 'eig.py')
 
@@ -19,9 +17,7 @@ module.exports = function (matrix) {
       encoding: 'utf8'
     })
   }).then(function (stdout) {
-    fs.unlink(filename, noop)
+    fs.unlink(filename)
     return JSON.parse(stdout[0])
   })
 }
-
-function noop() {}

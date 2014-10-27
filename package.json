@@ -6,8 +6,7 @@
   "license": "MIT",
   "repository": "math-utils/eig",
   "dependencies": {
-    "mz": "1",
-    "native-or-bluebird": "1"
+    "mz": "1"
   },
   "devDependencies": {
     "mocha": "2",
