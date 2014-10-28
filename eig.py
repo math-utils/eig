@@ -9,9 +9,8 @@ import sys
 
 def eigvals_json(data):
     eigvals, eigvectors = numpy.linalg.eig(numpy.array(data))
-    eigdata = [(e[0], e[1]) for e in
-               itertools.izip(eigvals.real, eigvectors.real)]
-    eigdata.sort(key=operator.itemgetter(0), reverse=True)
+    eigdata = [(e[0], e[1]) for e in itertools.izip(eigvals.real, eigvectors.real)]
+    eigdata.sort(key=lambda x: abs(x[0]), reverse=True)
     return {
         'eigenvalues': [e[0] for e in eigdata],
         'eigenvectors': [e[1].tolist() for e in eigdata],
