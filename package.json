@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": "math-utils/eig",
   "dependencies": {
-    "mz": "1"
+    "mz": "2.2.0"
   },
   "devDependencies": {
     "bluebird": "2",
